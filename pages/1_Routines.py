@@ -2,7 +2,7 @@ import streamlit as st
 import json
 import utils
 
-st.set_page_config(page_title="Routines Management", page_icon="")
+st.set_page_config(page_title="Routines Management", page_icon="🏋️")
 
 st.title("Routines Management")
 routines_df = utils.get_routines()
@@ -14,7 +14,7 @@ if mode == "Create":
     st.subheader("Create a Routine")
     with st.form("add_r"):
         n = st.text_input("Routine Name")
-        e = st.text_area("Exercices list (one by line)", height=150)
+        e = st.text_area("Exercices list (one per line)", height=150)
         if st.form_submit_button("Create routine"):
             if n and e:
                 ex_list = [x.strip() for x in e.split('\n') if x.strip()]
@@ -41,4 +41,4 @@ else:
             utils.delete_routine(int(curr['id']))
             st.rerun()
     else:
-        st.info("Aucune routine à modifier.")
+        st.write("No data.")

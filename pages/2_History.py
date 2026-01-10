@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import utils
 
-st.set_page_config(page_title="History", page_icon="📜")
+st.set_page_config(page_title="History", page_icon="🏋️")
 
 st.title("History")
 
@@ -33,4 +33,4 @@ if not df.empty:
         # ✅ Passer le mapping à la fonction
         utils.update_log_database(st.session_state["history_editor"], id_mapping)
 else:
-    st.write("Aucune donnée disponible.")
+    st.write("No data.")

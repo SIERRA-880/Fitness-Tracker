@@ -33,7 +33,7 @@ def show_entry_modal():
     with st.form("log_modal"):
         c1, c2 = st.columns(2)
         reps = c1.number_input("Reps", 1, value=10)
-        w = c2.number_input("Poids (kg)", 0.0, step=0.5)
+        w = c2.number_input("Poids (kg)", 0.0, step=2.5, format="%.1f")
 
         # Bouton de soumission
         if st.form_submit_button("Add", use_container_width=True):
